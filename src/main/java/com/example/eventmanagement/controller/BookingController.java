@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.eventmanagement.entity.Booking;
 import com.example.eventmanagement.service.BookingService;
-
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -28,7 +27,7 @@ public class BookingController {
     }
 
     @PostMapping
-    public ResponseEntity<Booking> createBooking(@RequestParam Long userId , @RequestParam Long eventId ,@RequestParam ticketBooked) {
+    public ResponseEntity<Booking> createBooking(@RequestParam Long userId , @RequestParam Long eventId ,@RequestParam Integer ticketBooked) {
         //TODO: process POST request
         Booking booking = bookingService.createBooking(userId , eventId , ticketBooked);
         if(booking == null){
@@ -54,7 +53,7 @@ public class BookingController {
     }
 
     @PutMapping("/{id}/cancel")
-    public ResponseEntity<Booking> cancelBooking(@PathVariable String id) {
+    public ResponseEntity<Booking> cancelBooking(@PathVariable Long id) {
         //TODO: process PUT request
         Booking booking = bookingService.cancelBooking(id);
         if(booking == null){

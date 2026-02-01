@@ -1,9 +1,7 @@
 package com.example.eventmanagement.service;
 
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
+import com.example.eventmanagement.entity.User;
 import com.example.eventmanagement.entity.Booking;
 import com.example.eventmanagement.entity.Event;
 import com.example.eventmanagement.repository.BookingRepository;
@@ -25,7 +23,7 @@ public class BookingService {
 
     public Booking createBooking(Long userId , Long eventId , Integer ticketsBooked){
 
-        User user = userRepository.findById(userId).orElse(null);
+        User user = userRepository.findById(userId.intValue()).orElse(null);
 
         Event event = eventRepository.findById(eventId).orElse(null);
         
@@ -55,8 +53,8 @@ public class BookingService {
         return bookingRepository.findById(id).orElse(null);
     }
 
-    public Booking cancelBooking(Long bookingId){
-        Booking booking = bookingRepository.findById(bookingId).orElse(null);
+    public Booking cancelBooking(Long id) {
+        Booking booking = bookingRepository.findById(id).orElse(null);
 
         if(booking == null){
             return null;
