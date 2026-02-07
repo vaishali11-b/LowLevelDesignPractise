@@ -1,0 +1,26 @@
+public final class PushNotification implements Notification{
+    private final String devideId;
+    private final String title;
+    private final String message;
+
+    PushNotification(Strind devideId , String message ,String title;){
+        this.devideId = devideId;
+        this.message = message;
+        this.title = title;
+    }
+    @Override
+    public String getChannel(){
+        return Channel.Push;
+    }
+    @Override
+    public String getRecipient(){
+        return devideId;
+    }
+    @Override
+    public String getContent(){
+        return message;
+    }
+    public String getTitle(){
+        return title;
+    }
+}
