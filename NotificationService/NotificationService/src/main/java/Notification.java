@@ -1,5 +1,5 @@
 public interface Notification {
-    public Channel getChannel();
-    public String getRecipient();
-    public String getContent();
+     Channel getChannel();
+     String getRecipient();
+     String getContent();
 }

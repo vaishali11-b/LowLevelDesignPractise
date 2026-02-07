@@ -2,11 +2,11 @@ import java.nio.channels.Channel;
 
 public final class SMSNotification implements Notification{
     private final String contact;
-    private final String body;
+    private final String message;
 
-    SMSNotification(String contact , String body){
+    SMSNotification(String contact , String message){
         this.contact = contact;
-        this.body = body;
+        this.message = message;
     }
 
     @Override
@@ -19,6 +19,6 @@ public final class SMSNotification implements Notification{
     }
     @Override
     public String getContent(){
-        return body;
+        return message;
     }
 }
