@@ -7,23 +7,23 @@ import java.util.*;
 
 public class DefaultNotificationSenderFactory implements NotificationSenderFactory{
     private final Map<Channel , NotificationSender> senderMap;
-    private final Map<Channel , SchedulableNotificationSender> schedulableSender;
+    private final Map<Channel , SchedulableNotificationSender> schedulableSenderMap;
 
-    DefaultNotificationSenderFactory(Map<Channel , NotificationSender> senderMap , Map<Channel , SchedulableNotificationSender> schedulableSender){
-        this.senderMap = senderMap;
-        this.schedulableSender = schedulableSender;
+    public DefaultNotificationSenderFactory(){
+        this.senderMap = new HashMap<>();
+        this.schedulableSenderMap = new HashMap<>();
 
         EmailNotificationSender emailNotification = new EmailNotificationSender();
-        SMSNotificationSender smsNotification = new SMSNotification();
+        SMSNotificationSender smsNotification = new SMSNotificationSender();
         PushNotificationSender pushNotification = new PushNotificationSender();
 
-        senderMap.put(Email , emailNotification);
-        senderMap.put(SMS , smsNotification);
-        senderMap.put(Push , pushNotification);
+        senderMap.put(Channel.Email , emailNotification);
+        senderMap.put(Channel.SMS , smsNotification);
+        senderMap.put(Channel.Push , pushNotification);
         
-        schedulableSender.put(Email , emailNotification);
-        schedulableSender.put(SMS , smsNotification);
-        schedulableSender.put(Push , pushNotification);
+        schedulableSenderMap.put(Channel.Email , emailNotification);
+        schedulableSenderMap.put(Channel.SMS , smsNotification);
+        schedulableSenderMap.put(Channel.Push , pushNotification);
 
     }
      @Override

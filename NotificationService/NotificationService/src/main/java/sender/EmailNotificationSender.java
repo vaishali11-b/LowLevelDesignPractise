@@ -3,7 +3,7 @@ package sender;
 import model.Notification;
 import java.time.LocalDateTime;
 
-public class EmailNotificationSender implements ScheduledNotificationSender{
+public class EmailNotificationSender implements SchedulableNotificationSender{
 
     @Override
     public void send(Notification notification){
