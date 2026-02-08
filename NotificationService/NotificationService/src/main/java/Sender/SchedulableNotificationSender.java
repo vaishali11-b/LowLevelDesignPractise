@@ -1,6 +1,7 @@
-import java.security.Timestamp;
+package sender;
 
-import javax.management.Notification;
+import model.Notification;
+import java.time.LocalDateTime;
 
 public interface SchedulableNotificationSender extends NotificationSender {
     void schedule(Notification notification, LocalDateTime dateTime);

@@ -1,9 +1,12 @@
+package model;
+
+import channel.Channel;
 public final class PushNotification implements Notification{
     private final String devideId;
     private final String title;
     private final String message;
 
-    PushNotification(Strind devideId , String message ,String title;){
+    PushNotification(String devideId , String message ,String title){
         this.devideId = devideId;
         this.message = message;
         this.title = title;

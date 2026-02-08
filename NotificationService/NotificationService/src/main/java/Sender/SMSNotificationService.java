@@ -1,4 +1,8 @@
-import javax.management.Notification;
+package sender;
+
+import model.Notification;
+import java.time.LocalDateTime;
+
 
 public class SMSNotificationService implements ScheduledNotificationSender {
     @Override

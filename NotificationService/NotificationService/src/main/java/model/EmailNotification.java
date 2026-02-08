@@ -1,4 +1,6 @@
-import java.nio.channels.Channel;
+package model;
+
+import channel.Channel; 
 
 public final class EmailNotification implements Notification{
 

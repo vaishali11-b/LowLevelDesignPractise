@@ -1,6 +1,7 @@
-import java.time.LocalDateTime;
+package sender;
 
-import javax.management.Notification;
+import model.Notification;
+import java.time.LocalDateTime;
 
 public class EmailNotificationSender implements ScheduledNotificationSender{
 
@@ -15,4 +16,4 @@ public class EmailNotificationSender implements ScheduledNotificationSender{
 
     }
 
-}
+
