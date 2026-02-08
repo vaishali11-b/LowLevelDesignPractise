@@ -6,13 +6,13 @@ public final class SMSNotification implements Notification{
     private final String contact;
     private final String message;
 
-    SMSNotification(String contact , String message){
+    public SMSNotification(String contact , String message){
         this.contact = contact;
         this.message = message;
     }
 
     @Override
-    public String getChannel(){
+    public Channel getChannel(){
         return Channel.SMS;
     }
     @Override

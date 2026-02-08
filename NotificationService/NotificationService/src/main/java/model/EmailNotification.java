@@ -14,18 +14,18 @@ public final class EmailNotification implements Notification{
         this.subject = subject;
     }
     @Override
-    private getChannel(){
+    public Channel getChannel(){
         return Channel.Email;
     }
     @Override
-    private String getRecipient(){
+    public String getRecipient(){
         return toEmail;
     }
     @Override
-    private String getContent(){
+    public String getContent(){
         return body;
     }
-    private Strind getSubject(){
+    public String getSubject(){
         return subject;
     }
 

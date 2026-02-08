@@ -6,13 +6,13 @@ public final class PushNotification implements Notification{
     private final String title;
     private final String message;
 
-    PushNotification(String devideId , String message ,String title){
+    public PushNotification(String devideId , String message ,String title){
         this.devideId = devideId;
         this.message = message;
         this.title = title;
     }
     @Override
-    public String getChannel(){
+    public Channel getChannel(){
         return Channel.Push;
     }
     @Override
