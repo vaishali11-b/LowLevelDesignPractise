@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch TicTacToe",
+            "request": "launch",
+            "mainClass": "tictactoe.App",
+            "classPaths": [
+                "${workspaceFolder}/bin",
+                "${workspaceFolder}/tictactoe/bin"
+            ],
+            "modulePaths": [
+                "${workspaceFolder}/bin",
+                "${workspaceFolder}/tictactoe/bin"
+            ]
+        }
+    ]
+}
